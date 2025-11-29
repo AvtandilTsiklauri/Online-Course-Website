@@ -264,11 +264,26 @@ body {
 }
 
 .hero-section {
-    background-color: #f8f8f8;
-    padding: 40px 0;
+    background-image: url('/Assets/Design\ .png'); 
+    background-size: cover; 
+    background-position: calc(50% + 50px) center;
+    background-repeat: no-repeat; 
+    background-color: #f8f8f8; 
+    padding: 60px 0; 
     margin-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0; 
 }
-
+.breadcrumb-arrow {
+    width: 8px; 
+    height: 8px; 
+    vertical-align: middle;
+    filter: brightness(0.5);
+}
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 .page-title {
     font-size: 2rem;
     font-weight: 700;
