@@ -66,10 +66,53 @@
             </div>
         </div>
     </section>
+    <main class="auth-section">
+        <div class="auth-card">
+            
+            <div class="welcome-text">
+                <h2>Welcome back!</h2>
+                <p>Hey there! Ready to log in? Just enter your username and password below and you'll be back in action in no time. Let's go!</p>
+            </div>
+            
+            <button class="btn-google">
+                <img src="/Assets/Google Icon.png" onerror="this.src='/Assets/Google Icon.png'" alt="Google icon">
+                Continue with Google
+            </button>
+            
+            <div class="separator">or</div>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="Email"><b>Email</b></label>
+                    <input type="email" id="login-email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="Password"><b>Password</b></label>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                </div>
+                
+                <div class="remember-forgot">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                
+                <button type="submit" class="btn-sign-in">
+                    Sign In <span class="arrow-icon">→</span>
+                </button>
+                
+                <div id="auth-error-message" class="error-message"></div>
 
+            </form>
 
-
-    
+            <div class="signup-link-area">
+                Don't have an account? <a href="Register.html">Sign Up</a>
+            </div>
+            
+        </div>
+    </main>
     <footer class="main-footer">
         <div class="container footer-grid">
             
