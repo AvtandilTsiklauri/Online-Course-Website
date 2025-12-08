@@ -636,12 +636,14 @@ body {
     background-color: #fff;
     width: 690px; 
     max-width: 690px; 
-    height: 705.7px; 
+    min-height: 720px; 
     border-radius: 8px; 
     padding: 60px 70px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
     box-sizing: border-box; 
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .welcome-text {
@@ -724,7 +726,8 @@ button {
 }
 
 .form-group {
-    margin-bottom: 25px; 
+    margin-bottom: 15px; 
+    position: relative;
 }
 
 .form-group label {
@@ -821,6 +824,18 @@ button {
 .signup-link-area a:hover {
     text-decoration: underline;
 }
+#email-error, #password-error {
+    color: #e53e3e; 
+    font-size: 0.85rem;
+    margin-top: 5px;
+    height: 18px; 
+    font-weight: 500;
+    text-align: left;
+}
+.input-error {
+    border-color: #e53e3e !important;
+}
+
 
 .register-section {
     display: flex;
@@ -838,6 +853,10 @@ button {
     background-color: #fff;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
     box-sizing: border-box;
+    min-height: 800px;
+    height: auto; 
+    display: flex;
+    flex-direction: column;
 }
 .register-welcome-text {
     text-align: left;
@@ -977,6 +996,9 @@ button {
     color: red;
     font-size: 0.85rem;
     margin-top: 5px;
+    height: 14px; 
+    margin-bottom: 5px;
+    font-weight: 500;
 }
 
 
@@ -1068,6 +1090,7 @@ button {
     display: flex;
     gap: 15px;
     margin-bottom: 20px;
+    align-items: flex-start;
 }
 .input-field {
     flex: 1;
@@ -1104,7 +1127,19 @@ button {
     width: 100%;
     border-radius: 12px;
 }
-
+.error-text {
+    color: #e53e3e; 
+    font-size: 0.8rem;
+    height: 14px; 
+    margin: 4px 0 10px 0;
+    font-weight: 500;
+    text-align: left;
+}
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
 
 .blog-section {
     width: 100%;
@@ -1128,6 +1163,7 @@ button {
     position: relative;
     overflow: visible; 
     transition: transform .18s ease;
+    cursor: pointer;
 }
 .blog-card:hover {
     transform: translateY(-4px);
@@ -1199,3 +1235,4 @@ button {
     background: #6a49f2;
     color: #fff;
 }
+

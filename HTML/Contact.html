@@ -104,22 +104,33 @@
 
         </div>
 
-        <div class="form-column">
+        <div class="form-column" >
 
             <div class="form-box">
 
                 <h2>Send Us Message</h2>
                 <p class="subtext">Your email address will not be published. Required fields are marked *</p>
 
-                <textarea class="input-textarea" placeholder=""></textarea>
+                <textarea class="input-textarea" placeholder="" id="message-input"></textarea>
 
                 <div class="form-row">
-                    <input class="input-field" type="text" placeholder="Name *">
-                    <input class="input-field" type="email" placeholder="E-mail *">
-                    <input class="input-field" type="text" placeholder="Website *">
+                    <div class="input-group">
+                        <input id="name-input" class="input-field" type="text" placeholder="Name *">
+                        <p id="name-error" class="error-text"></p>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input id="email-input" class="input-field" type="email" placeholder="E-mail *">
+                        <p id="email-error" class="error-text"></p>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input id="website-input" class="input-field" type="text" placeholder="Website *">
+                        <p id="website-error" class="error-text"></p>
+                    </div>
                 </div>
 
-                <button class="submit-btn">
+                <button class="submit-btn" onclick="Contact(event)">
                     Submit Now →
                 </button>
 

@@ -1,48 +1,48 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Event Detail Page loaded. JS ready for interaction.');
-    const joinButton = document.querySelector('.join-button'); 
-    const priceBox = document.querySelector('.pricing-card'); 
-    if (joinButton && priceBox) { 
-        joinButton.addEventListener('click', (event) => {
-            event.preventDefault(); 
-            const message = document.createElement('div');
-            message.textContent = 'Initiating Registration And Secure Payment Process...';
-            message.style.cssText = `
-                position: absolute;
-                bottom: -40px;
-                left: 0;
-                right: 0;
-                background-color: #38c172;
-                color: white;
-                padding: 8px;
-                border-radius: 6px;
-                font-size: 0.8rem;
-                text-align: center;
-                opacity: 0;
-                transition: opacity 0.5s;
-                /* Ensure it sits above other content */
-                z-index: 10;
-            `;
-            if (window.getComputedStyle(priceBox).position === 'static') {
-                priceBox.style.position = 'relative';
-            }
-            priceBox.appendChild(message);
-            setTimeout(() => {
-                message.style.opacity = 1;
-            }, 10); 
-            setTimeout(() => {
-                message.style.opacity = 0;
-                message.addEventListener('transitionend', () => message.remove());
-            }, 3000); 
+function EventJoin() {
+    alert("Success! You have officially joined this event.");
 
-            console.log('Join event button clicked. A real application would now redirect to checkout.');
+    const joinBtn = document.getElementById("join-btn");
+    joinBtn.innerText = "Joined ✓";
+    joinBtn.style.backgroundColor = "#e2e8f0"; 
+    joinBtn.disabled = true; 
+    joinBtn.style.cursor = "default";
+}
+
+function handleEventsLogic() {
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    if (blogCards.length > 0) {
+        blogCards.forEach((card) => {
+            card.style.cursor = "pointer"; 
+            card.addEventListener('click', () => {
+                const title = card.querySelector('h3').innerText;
+                const image = card.querySelector('img').getAttribute('src');
+
+                localStorage.setItem("selectedEventTitle", title);
+                localStorage.setItem("selectedEventImage", image);
+
+                window.location.href = "EventDetails.html";
+            });
         });
-    } else {
-        if (!joinButton) {
-            console.error("Error: The 'Join This Event' button (.join-button) was not found.");
-        }
-        if (!priceBox) {
-            console.error("Error: The price box container (.pricing-card) was not found.");
-        }
     }
-});
+    const detailsHero = document.getElementById("details-hero-title");
+    if (detailsHero) {
+        const savedTitle = localStorage.getItem("selectedEventTitle");
+        const savedImage = localStorage.getItem("selectedEventImage");
+
+        if (savedTitle && savedImage) {
+            detailsHero.innerText = savedTitle;
+            
+            const contentTitle = document.getElementById("details-content-title");
+            if (contentTitle) contentTitle.innerText = savedTitle;
+
+            const mainImg = document.getElementById("details-main-img");
+            if (mainImg) mainImg.src = savedImage;
+            
+            const breadcrumb = document.getElementById("details-breadcrumb");
+            if (breadcrumb) breadcrumb.innerText = savedTitle;
+        } 
+        
+    }
+}
+document.addEventListener('DOMContentLoaded', handleEventsLogic);

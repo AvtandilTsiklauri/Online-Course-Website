@@ -26,7 +26,8 @@
     </section>
     <header class="main-header">
         <div class="container header-content">
-            <a href="./EventDetails.html" class="logo-link"><img src="/Assets/Site Logo.png" alt="Logo" class="logo-img"></a>
+            <a href="./EventDetails.html" class="logo-link" onclick="localStorage.removeItem('selectedEventTitle'); localStorage.removeItem('selectedEventImage');">
+        <img src="/Assets/Site Logo.png" alt="Logo" class="logo-img"></a>
         <nav class="main-nav">
             <a href="#" class="nav-dropdown">Home<img src="/Assets/Drop Down.png" alt="Drop Down" class="dropdown-arrow"></a>
             <a href="#" class="nav-dropdown">Courses<img src="/Assets/Drop Down.png" alt="Drop Down" class="dropdown-arrow"></a>
@@ -58,19 +59,19 @@
     </header>
     <section class="hero-section">
         <div class="container">
-            <h1 class="page-title">Resolving Conflicts Between Designers</h1>
+            <h1 class="page-title" id="details-hero-title">Resolving Conflicts Between Designers</h1>
             <div class="breadcrumbs">
                 <a href="#">Home</a>
                 <img src="/Assets/Right Arrow.png" alt="Arrow" class="breadcrumb-arrow">
                 <a href="#">Events</a>
                 <img src="/Assets/Right Arrow.png" alt="Arrow" class="breadcrumb-arrow">
-                <span>Resolving Conflicts Between Designers</span>
+                <span id="details-breadcrumb">Resolving Conflicts Between Designers</span>
             </div>
         </div>
     </section>
     <main class="content-layout container">
         <section class="event-details">
-            <img src="/Assets/Photo1.png" alt="Group of students collaborating" class="event-image">
+            <img src="/Assets/Photo1.png" alt="Group of students collaborating" class="event-image" id="details-main-img">
             
             <div class="metadata">
                 <span class="tag">Development</span>
@@ -79,7 +80,7 @@
                 </span>
             </div>
 
-            <h2>How To Become Idiculously Self-Aware in 20 Minutes</h2>
+            <h2 id="details-content-title">How To Become Idiculously Self-Aware in 20 Minutes</h2>
             
             <div class="author-info">
                 <img src="/Assets/David Miller.png" alt="David Miller" class="author-avatar"> 
@@ -143,7 +144,7 @@ adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magn.</p>
                     <a href="#"><img src="/Assets/Instagram Share.png" class="icons"></a>
                     <a href="#"><img src="/Assets/YT Share.png" class="icons"></a>
                 </div>
-                <button class="btn btn-full join-button">Join This Event</button>
+                <button class="btn btn-full join-button" id="join-btn" onclick="EventJoin()">Join This Event</button>
             </div>
            
                 

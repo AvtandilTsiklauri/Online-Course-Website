@@ -75,13 +75,13 @@
             </div>
             
             <button class="register-btn-google" id="btn-google-signup">
-                <img src="https://placehold.co/20x20/ffffff/000000?text=G" onerror="this.src='/Assets/Google Icon.png'" alt="Google icon">
+                <img src="/Assets/Google Icon.png" onerror="this.src='/Assets/Google Icon.png'" alt="Google icon">
                 Continue with Google
             </button>
             
             <div class="register-separator">or</div>
             
-            <form id="signup-form">
+            <form id="signup-form" novalidate>
                 
                 <div id="first-error" class="error-message"></div>
                 <div class="name-fields-container">
@@ -117,7 +117,7 @@
                     <div id="confirm-pass-error" class="error-message"></div>
                 </div>
                 
-                <button type="submit" class="register-btn-sign-up" style="margin-top: 40px;">
+                <button type="submit" class="register-btn-sign-up" style="margin-top: 40px;" onclick="SignUp(event)">
                     Sign Up <span class="arrow-icon">→</span>
                 </button>
                 

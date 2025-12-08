@@ -81,14 +81,16 @@
             
             <div class="separator">or</div>
             
-            <form id="login-form">
+            <form id="login-form" novalidate>
                 <div class="form-group">
                     <label for="Email"><b>Email</b></label>
                     <input type="email" id="login-email" placeholder="Email" required>
+                    <p id="email-error"></p>
                 </div>
                 <div class="form-group">
                     <label for="Password"><b>Password</b></label>
                     <input type="password" id="login-password" placeholder="Password" required>
+                    <p id="password-error"></p>
                 </div>
                 
                 <div class="remember-forgot">
@@ -99,7 +101,7 @@
                     <a href="#">Forgot Password?</a>
                 </div>
                 
-                <button type="submit" class="btn-sign-in">
+                <button type="submit" class="btn-sign-in" onclick="Login(event)">
                     Sign In <span class="arrow-icon">→</span>
                 </button>
                 
